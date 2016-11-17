@@ -1,4 +1,4 @@
-package jp.ac.uryukyu.ie.e145735;
+
 
 import org.junit.Before;
 import org.junit.Test;
