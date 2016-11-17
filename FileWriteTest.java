@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by e145735 on 2015/12/01.
+ * 
  */
 public class FileWriteTest {
     FileWrite fw;
