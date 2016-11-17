@@ -1,4 +1,4 @@
-package jp.ac.uryukyu.ie.e145735;
+
 
 import java.io.BufferedOutputStream;
 //import java.io.FileNotFoundException;
