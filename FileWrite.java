@@ -9,7 +9,7 @@ import java.io.IOException;
 
 
 /**
- * Created by e145735 on 2015/11/30.
+ * 
  */
 
 public class FileWrite {
