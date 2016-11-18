@@ -1,4 +1,3 @@
-package jp.ac.uryukyu.ie.e155730;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
@@ -6,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * Created by e155730 on 11/1/16.
  */
 
 

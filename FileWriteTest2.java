@@ -1,4 +1,3 @@
-package jp.ac.uryukyu.ie.e155730;
 
 import org.junit.Test;
 
