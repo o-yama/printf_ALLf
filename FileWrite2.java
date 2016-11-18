@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /*
  */
-
+/*I/O(入出力)関係の例外処理*/
 
 public class FileWrite2 {
 
@@ -24,7 +24,7 @@ public class FileWrite2 {
     private String filename = "output.txt";
 
     public static void main(String args[]) throws IOException {
-        FileWrite2 fileWrite = new FileWrite2();    //
+        FileWrite2 fileWrite = new FileWrite2();    
         fileWrite.getOpts(args);
         fileWrite.fileWrite();
 
@@ -75,8 +75,8 @@ public class FileWrite2 {
 
 
             for(int i=0;i<writeSize;i++){
-                os.write(0x20);                     //引数で指定したwriteSizeの文だけ書込み
-            }
+                os.write(0x20);                     /*引数で指定したwriteSizeの文だけ書込み*/
+            }                                               /*ファイルに書き込み. スペースを*/
 
             os.close();
 

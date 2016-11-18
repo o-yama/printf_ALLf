@@ -4,5 +4,5 @@
 ##残念ですね！
 
 #FileWrite2.javaとFileWriteTest2.javaをがんばりましょう
-os.write()とos.close()の引数と共にわからない
+FileWriteクラス?を使ってるのがわからない
 誰か任せた
