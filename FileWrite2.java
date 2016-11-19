@@ -24,9 +24,10 @@ public class FileWrite2 {
     private String filename = "output.txt";
 
     public static void main(String args[]) throws IOException {
-        FileWrite2 fileWrite = new FileWrite2();    
-        fileWrite.getOpts(args);
-        fileWrite.fileWrite();
+        FileWrite2 fileWrite = new FileWrite2();     
+        /*FileWrite2のclass全体をfileWriteという名前にしてる*/
+        fileWrite.getOpts(args);       //それぞれ実行
+        fileWrite.fileWrite();              
 
     }
 
@@ -63,12 +64,12 @@ public class FileWrite2 {
         System.out.println("--size max filesize --helo,-h:show help");
     }
 
-/**/
 
     public void fileWrite() throws IOException {
 
     //bufferedだった場合
         if(buffered){
+            /*BufferedOutputStream, */
             BufferedOutputStream os = new BufferedOutputStream(new FileOutputStream(filename),bufferSize);
 
             long start = System.nanoTime();
