@@ -1,0 +1,72 @@
+
+
+
+How to tool!
+
+[bufsizetime]
+    ./bufsizetime ファイルサイズ 初期バッファサイズ　バッファサイズの増加量
+	
+	おすすめ実験設定 : ./bufsizetime 1000000 10 10
+	
+	ex)
+	  時間 Buffersize
+
+	  203 10   <-- 初期Buffersizeで測定開始
+	  208 10
+	  209 10
+	  118 20   <-- Buffersizeが10増加
+	  116 20
+	    ・
+	    ・
+	    ・
+	  112 20
+	  88 30
+	  88 30
+	  90 30　　<-- 最後まで測定するとgnubuffer.txtに結果を出力
+
+
+
+
+	  gnuplot:
+	             gnuplot > set terminal svg
+				           set output "好きな名前.svg"
+						   set xlabel millisecond
+						   set ylabel buffersize
+						   plot "gnubuffer.txt" using 1:2 w l title "好きなグラフの名前" 
+	                       SVGファイルの完成！
+
+	   
+[filesizetime]
+     ./filesizetime ファイルサイズ バッファサイズ
+
+	 おすすめ実験設定 : ./filesizetime 10000 10000
+
+	 ex)
+
+	 ファイルサイズ　バッファ有りの時間　バッファ無しの時間
+	 
+	 10000 1 16
+	 10000 1 17
+	 10000 1 18
+	 10000 1 19
+	 10000 0 17
+	 10000 1 17
+         ・
+		 ・
+		 ・
+
+		        測定が終わるとgnufile.txtに結果を出力
+
+
+	gnuplot :
+	             gnuplot > set terminal svg
+				           set output "好きな名前.svg"
+						   set xlabel millisecond
+						   set ylabel filesize
+						   plot "gnufile.txt" using 1:2 w l title "Buffer"
+						   set output "好きな名前.svg"
+						   set xlabel millisecond
+						   set ylabel filesize
+						   replot "gnufile.txt" using 1:3 w l title "UnBuffer"
+						  SVGファイル完成！ 
+						   			

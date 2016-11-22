@@ -33,3 +33,4 @@ SUM=0
 n=0
 i=`expr $i + 1`
 done
+less gnufile.txt
