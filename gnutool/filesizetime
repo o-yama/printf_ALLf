@@ -1,0 +1,35 @@
+#!/bin/sh
+rm -f gnufile.txt
+touch gnufile.txt
+Filesize=$1
+Buffersize=$2
+n=0
+i=0
+BUFSUM=0
+BUFAVE=0
+SUM=0
+AVE=0
+echo 'Buffersize is stable , Filesize is flexble'
+while [ $i -lt 10 ]
+do
+while [ $n -lt 10 ]
+do
+BUFRESULT=`java FileWrite -s $Filesize -b $Buffersize`
+RESULT=`java FileWrite -s $Filesize -u `
+echo $Filesize $BUFRESULT $RESULT 
+#Buffersize=`expr $Buffersize + 5000`
+n=`expr $n + 1`
+BUFSUM=`expr $BUFSUM + $BUFRESULT`
+SUM=`expr $SUM + $RESULT`
+done
+#echo $BUFSUM
+#echo $n
+BUFAVE=`expr $BUFSUM / $n`
+AVE=`expr $SUM / $n`
+echo $Filesize $BUFAVE $AVE >> gnufile.txt
+Filesize=`expr $Filesize + 5000`
+BUFSUM=0
+SUM=0
+n=0
+i=`expr $i + 1`
+done

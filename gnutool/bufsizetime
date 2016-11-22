@@ -1,0 +1,33 @@
+#!/bin/sh
+rm -f gnubuffer.txt
+touch gnubuffer.txt
+rm -f debag.txt
+touch debag.txt
+Filesize=$1
+Buffersize=$2
+ADD=$3
+n=0
+i=0
+BUFSUM=0
+BUFAVE=0
+while [ $i -lt 10 ]
+do
+while [ $n -lt 10 ]
+do
+BUFRESULT=`java FileWrite -s $Filesize -b $Buffersize`
+echo $BUFRESULT $Buffersize
+#Buffersize=`expr $Buffersize + 5000`
+n=`expr $n + 1`
+BUFSUM=`expr $BUFSUM + $BUFRESULT`
+done
+#echo $BUFSUM
+#echo $n
+echo $BUFSUM $Buffersize >> debag.txt
+BUFAVE=`expr $BUFSUM / $n`
+echo $Buffersize $BUFAVE >> gnubuffer.txt
+Buffersize=`expr $Buffersize + $ADD`
+BUFSUM=0
+n=0
+i=`expr $i + 1`
+done
+less gnubuffer.txt
